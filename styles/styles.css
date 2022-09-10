@@ -33,7 +33,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: currentColor;
+  
 }
 img {
   display: block;
@@ -74,6 +74,7 @@ img {
   font-size: 26px;
   line-height: 1.19;
   padding-top: 24px;
+  padding-bottom: 24px;
   margin-right: 93px;
   /* Якщо роблю padding-top: 24 то лого пидскакує */
 }
@@ -127,6 +128,9 @@ img {
   color: var(--activity-color);
 }
 .list-item:hover {
+  color: var(--activity-color);
+}
+.list-item:focus {
   color: var(--activity-color);
 }
 .list-item.current::after {
@@ -199,7 +203,7 @@ img {
 }
 .section.work {
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: 94px;
  
 }
 
@@ -337,8 +341,9 @@ img {
   position: absolute;
   left: 0px;
   bottom: 0px;
-
-  padding-top: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   width: 100%;
   height: 70px;
@@ -358,6 +363,11 @@ img {
   background-color: var(--secondary-background-color);
   padding-bottom: 94px;
 }
+.cards-team{
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+}
 .list-team {
   list-style-type: none;
   display: flex;
@@ -376,9 +386,7 @@ img {
 
   margin-bottom: 10px;
 }
-.image-team {
-  margin-bottom: 30px;
-}
+
 .job-title {
   text-align: center;
   letter-spacing: 0.03em;
@@ -439,7 +447,13 @@ img {
 .color-adress:hover {
   color: var(--activity-color);
 }
+.color-adress:focus {
+  color: var(--activity-color);
+}
 .adress-contact:hover {
+  color: var(--activity-color);
+}
+.adress-contact:focus{
   color: var(--activity-color);
 }
 .adress-contact:last-child {
@@ -490,6 +504,13 @@ img {
 .footer-social-item:hover,
 .footer-social-item:focus {
   background-color: var(--activity-color);
+}
+.footer-social-link{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* CSS HW 2*/
@@ -590,14 +611,15 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  transition-property: transform;
+  transition-property: transform, opacity;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(100%);
   background-color: var(--activity-color-rgba90);
   opacity: 0;
 }
-.cards-thumb:hover .overley {
+.project-item:hover .overley,
+.project-item:focus .overley {
   transform: translateY(0);
   opacity: 1;
 }
@@ -671,7 +693,8 @@ img {
 .social-icon {
   fill: var(--social-icon-color);
 }
-.social-link:hover {
+.social-link:hover,
+.social-link:focus {
   background-color: var(--activity-color);
 }
 
@@ -725,11 +748,11 @@ img {
   width: 170px;
   height: 92px;
 
-  border-radius: 4px;
+  /* border-radius: 4px;
   border: 1px solid var(--social-icon-color);
   transition-property: border,fill;
   transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
 }
 .client-link {
   display: flex;
@@ -737,16 +760,21 @@ img {
   align-items: center;
   width: 100%;
   height: 100%;
+   border-radius: 4px;
+  border: 1px solid var(--social-icon-color);
+  transition-property: border,fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-icon {
   fill: var(--social-icon-color);
 }
-.client-item:hover,
-.client-item:focus {
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--activity-color);
 }
-.client-item:hover .client-icon,
-.client-item:focus .client-icon {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--activity-color);
 }
 /* Іконки футеру */
