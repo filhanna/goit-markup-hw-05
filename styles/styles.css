@@ -116,12 +116,30 @@ img {
   color: var(--primary-text-color);
   padding-top: 32px;
   padding-bottom: 32px;
+  position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .current {
   color: var(--activity-color);
 }
 .list-item:hover {
   color: var(--activity-color);
+}
+.list-item.current::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  bottom: -1.5%;
+  width: 100%;
+  height: 4px;
+  background-color: var(--activity-color);
+  border-radius: 2px;
+  height: 4px;
+
 }
 .main-nav {
   display: flex;
@@ -141,6 +159,9 @@ img {
   padding-bottom: 32px;
   color: var(--secondary-text-color);
   align-items: center;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover {
   color: var(--activity-color);
@@ -374,6 +395,9 @@ img {
   line-height: 24px;
   letter-spacing: 0.03em;
   color: var(--white-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-contact {
   display: block;
@@ -383,6 +407,9 @@ img {
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   margin-bottom: 9px;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .color-adress:hover {
   color: var(--activity-color);
@@ -427,6 +454,9 @@ img {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-social-item .social-icon {
@@ -446,6 +476,9 @@ img {
   gap: 8px;
   justify-content: center;
   margin-bottom: 50px;
+  transition-property: color,background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-list .btn2 {
   cursor: pointer;
@@ -457,6 +490,9 @@ img {
   border-radius: 4px;
   font-style: normal;
   padding: 6px 22px;
+  transition-property: color,background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-list .btn2:hover,
@@ -501,6 +537,9 @@ img {
 .project-item {
   text-decoration: none;
   display: block;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-item:hover,
@@ -514,13 +553,50 @@ img {
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
 }
+/* Оверлей */
+/* 
+.about-work{
+position: relative;
+
+/* overflow: hidden; */
+
+
+.overley{
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  width: 100%;
+  height: 100%;
+  background-color: var(--activity-color);
+  transform: translateY(-100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+.text-overley{
+  
+  
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--white-text-color);
+  background-color: var(--activity-color);
+}
+.about-work:hover .overley{
+  transform: translateY(0);
+} */
 
 /* Іконки соціальних мереж тімейтів */
 .social {
   display: flex;
   gap: 10px;
   justify-content: center;
-
+  
 }
 
 .social-link {
@@ -533,6 +609,9 @@ img {
 
   background-color: var(--primary-background-color);
   border-radius: 50%;
+  transition-property: background-color,fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
@@ -559,6 +638,11 @@ img {
   width: 10px;
   height: 16px;
   fill: var(--secondary-text-color);
+}
+.link{
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link:hover .activation-icon,
 .link:focus .activation-icon {
@@ -589,6 +673,9 @@ img {
 
   border-radius: 4px;
   border: 1px solid var(--social-icon-color);
+  transition-property: border,fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link {
   display: flex;
@@ -609,3 +696,47 @@ img {
   fill: var(--activity-color);
 }
 /* Іконки футеру */
+/* Модальне вікно */
+.backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition-property: opacity,visibility;
+transition-duration: 1000ms;
+transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.backdrop.is-hidden{
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+.modal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--primary-background-color);
+box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+
+}
+.modal-btn{
+  top: 10px;
+  right: 10px;
+ box-sizing: border-box;
+display: flex;
+position: absolute;
+width: 30px;
+height: 30px;
+background-color: var(--primary-background-color);
+border: 1px solid rgba(0, 0, 0, 0.1);
+border-radius: 50%;
+align-items: center;
+
+}
