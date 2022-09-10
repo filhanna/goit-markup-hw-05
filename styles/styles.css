@@ -366,7 +366,8 @@ img {
 .cards-team{
   padding-top: 30px;
   padding-bottom: 30px;
-  
+  padding-left: 32px;
+  padding-right: 32px;
 }
 .list-team {
   list-style-type: none;
